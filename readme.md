@@ -2,8 +2,8 @@
 Time travelling for Laravel 5 models.
 - Uses database table to store model states.
 - Can be accessed from ORM or URL Query String.
-- Bundled command to keep audits table healthy.
-- Ability to override Audits model for extension.
+- Bundled command to keep revisions table healthy.
+- Ability to override Revisions model for extension.
 
 ## Installation
 Run the following command on your project root.
@@ -22,7 +22,7 @@ Run ```php artisan vendor:publish``` to publish the package configurations.
 
 ## Modify Configuration
 Use the ```config/timetraveller.php``` file to modify the package defaults.
-- Audits Model ```'model' => ConceptByte\TimeTraveller\Models\Audits::class```
+- Revisions Model ```'model' => ConceptByte\TimeTraveller\Models\Revision::class```
 - Query String Parameter ```'at' => 'at'```
 - Clear audits that are older than ```'clear' => '365'```
 
@@ -41,6 +41,7 @@ Get the state of a record at a specific data/time.
 ```
 
 Get the state of a record using a query string.
+
 URL: ```timetravel.app/posts/1?at=58781813```
 ```php
     Post::find(1);
@@ -49,3 +50,7 @@ URL: ```timetravel.app/posts/1?at=58781813```
 You can clear the audits table records that are older than a specified range.
 ```php artisan time-traveller:clear```. This will read the config file and clear records that are older than the configured number of days.
 
+## Todo
+- Artisan command to clear revisions.
+- Return revisions as models/collections - not as nested relations.
+- Documentation.
