@@ -1,0 +1,20 @@
+{
+    "name": "conceptbyte/time-traveller",
+    "description": "Time travelling for Laravel models.",
+    "type": "package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rajdeep Tarat",
+            "email": "rajdeeptarat@conceptbyte.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ConceptByte\\TimeTraveller\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=5.5.9"
+    }
+}
