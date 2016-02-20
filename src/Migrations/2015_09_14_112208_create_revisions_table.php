@@ -12,7 +12,7 @@ class CreateRevisionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('revisions', function (Blueprint $table) {
+        Schema::create(config('timetraveller.table'), function (Blueprint $table) {
             $table->increments('id');
             $table->bigInteger('at')->index();
             $table->string('revisionable_type');

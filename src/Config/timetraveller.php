@@ -8,6 +8,13 @@ return [
     'model' => ConceptByte\TimeTraveller\Models\Revision::class,
 
     /**
+     * The table to which the revisions will be saved.
+     * Note: if you need to change this, the model also needs
+     * to be changed.
+     */
+    'table' => 'revisions',
+
+    /**
      * The name of the query string parameter that
      * fetches the revisions.
      */
