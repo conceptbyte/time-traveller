@@ -14,6 +14,7 @@ class CreateRevisionsTable extends Migration
     {
         Schema::create(config('timetraveller.table'), function (Blueprint $table) {
             $table->increments('id');
+            $table->string('by');
             $table->bigInteger('at')->index();
             $table->string('revisionable_type');
             $table->integer('revisionable_id')->unsigned();

@@ -35,6 +35,12 @@ class Post extents Model
 }
 ```
 
+All models that use the trait should implement the abstract function
+```asbstract public function by()``` which should return any string.
+
+This function can be used to save any additional attributes such as the 
+owner of the change.
+
 Get the state of a record at a specific data/time.
 ```php
     Post::at('58781813')->find(1);

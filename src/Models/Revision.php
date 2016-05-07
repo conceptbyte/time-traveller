@@ -19,7 +19,7 @@ class Revision extends Model
      *
      * @var array
      */
-    protected $fillable = ['at', 'revisionable_type', 'revisionable_id', 'state'];
+    protected $fillable = ['at', 'by', 'revisionable_type', 'revisionable_id', 'state'];
 
     /**
      * Hidden attributes on the model

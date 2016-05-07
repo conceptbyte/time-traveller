@@ -21,6 +21,7 @@ trait TimeTravel
                 'revisionable_type' => get_class($model),
                 'revisionable_id'   => $model->id,
                 'at'                => (new DateTime())->getTimestamp(),
+                'by'                => $model->getBy(),
                 'state'             => serialize($model),
             ]);
         });
@@ -47,4 +48,11 @@ trait TimeTravel
             },
         ]);
     }
+
+    /**
+     * Revision made by
+     *
+     * @return mixed
+     */
+    abstract public function getBy();
 }
