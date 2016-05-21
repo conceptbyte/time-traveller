@@ -35,28 +35,28 @@ class Post extents Model
 }
 ```
 
-All models that use the trait should implement the abstract function
-```asbstract public function by()``` which should return any string.
+All models that use the trait must implement ```abstract public function by()``` which returns any string.
+This function can be used to save any additional attributes such as the owner of the change.
 
-This function can be used to save any additional attributes such as the 
-owner of the change.
-
-Get the state of a record at a specific data/time.
+###Get the state of a record at a specific data/time.
 ```php
-    Post::at('58781813')->find(1);
+Post::at('58781813')->find(1);
 ```
 
-Get the state of a record using a query string.
+###Get the state of a record using a query string.
 
 URL: ```timetravel.app/posts/1?at=58781813```
 ```php
-    Post::find(1);
+Post::find(1);
 ```
 
-You can clear the audits table records that are older than a specified range.
+###Get a model with revisions
+```php
+Post::with('revisions')->first();
+```
+
+###You can clear the audits table records that are older than a specified range.
 ```php artisan time-traveller:clear```. This will read the config file and clear records that are older than the configured number of days.
 
 ## Todo
 - Artisan command to clear revisions.
-- Return revisions as models/collections - not as nested relations.
-- Documentation.

@@ -36,6 +36,8 @@ trait TimeTravel
     }
 
     /**
+     * Get the revisions at the given timestamp
+     * 
      * @param $query
      * @param $time
      * @return mixed

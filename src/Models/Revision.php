@@ -31,7 +31,7 @@ class Revision extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\MorphTo
      */
-    public function auditable()
+    public function revisionable()
     {
         return $this->morphTo();
     }
