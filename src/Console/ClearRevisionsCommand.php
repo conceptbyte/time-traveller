@@ -4,6 +4,7 @@ namespace ConceptByte\TimeTraveller\Console;
 
 use DateTime;
 use Illuminate\Console\Command;
+use ConceptByte\TimeTraveller\Models\Revision;
 
 class ClearRevisionsCommand extends Command
 {
@@ -31,9 +32,10 @@ class ClearRevisionsCommand extends Command
         $date = new DateTime;
         $interval = config('timetraveller.clear');
 
-        if ($this->confirm('Do you wish to continue? [y|N]')) {
+        if ($this->confirm('Do you wish to continue clearing revisions?')) {
             $date->modify("-$interval days")->format('Y-m-d H:i:s');
             return Revision::where('created_at', '<=', $date)->delete();
         }
+        $this->info('Old revision cleared');
     }
 }
