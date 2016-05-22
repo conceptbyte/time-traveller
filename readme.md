@@ -57,6 +57,3 @@ Post::with('revisions')->first();
 
 ###You can clear the audits table records that are older than a specified range.
 ```php artisan time-traveller:clear```. This will read the config file and clear records that are older than the configured number of days.
-
-## Todo
-- Artisan command to clear revisions.
