@@ -28,14 +28,20 @@ Use the ```config/timetraveller.php``` file to modify the package defaults.
 
 ## Usage
 Enable time traveller on a model by using the trait.
+
 ```php
 class Post extents Model
 {
     use TimeTravel;
+    
+    public function getBy()
+    {
+        return Auth::user()->name;
+    }
 }
 ```
 
-All models that use the trait must implement ```abstract public function by()``` which returns any string.
+All models that use the trait must implement ```abstract public function getBy()``` which returns any string.
 This function can be used to save any additional attributes such as the owner of the change.
 
 ###Get the state of a record at a specific data/time.
